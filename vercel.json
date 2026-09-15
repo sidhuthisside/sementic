@@ -1,0 +1,17 @@
+{
+  "framework": "nextjs",
+  "buildCommand": "npm run build",
+  "devCommand": "npm run dev",
+  "installCommand": "npm install --legacy-peer-deps",
+  "env": {
+    "NEXT_PUBLIC_SUPABASE_URL": "https://demo.supabase.co",
+    "NEXT_PUBLIC_SUPABASE_ANON_KEY": "demo-anon-key-placeholder",
+    "NEXTAUTH_SECRET": "demo-secret-for-vercel-deploy",
+    "NEXTAUTH_URL": "https://your-app.vercel.app",
+    "OLLAMA_BASE_URL": "http://localhost:11434",
+    "OLLAMA_MODEL_CODE": "qwen2.5-coder:0.5b",
+    "OLLAMA_MODEL_VL": "qwen2.5-coder:0.5b",
+    "GITHUB_ID": "demo",
+    "GITHUB_SECRET": "demo"
+  }
+}

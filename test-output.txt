@@ -1,0 +1,83 @@
+﻿TreeSitterFactory: Module loaded
+Starting DependencyBuilder Test...
+TreeSitterExtractor: Constructor called
+DependencyBuilder: Constructor called
+DependencyBuilder: buildGraph called
+TreeSitterExtractor: calling getLanguage for .ts
+FORCE LOG: init start
+TreeSitterFactory: initializing...
+Tree-sitter initialized successfully
+getLanguage: extension='.ts', langKey='typescript'
+Loading grammar from C:\Users\MADHAV\Downloads\alpha\hustlers_alphabyte26\public\tree-sitter-typescript.wasm
+Query created for .ts
+Found 3 matches for main.ts
+Capture: name=path, text='@angular/core'
+Capture: name=path, text='./utils/helper'
+Capture: name=path, text='fs'
+TreeSitterExtractor: calling getLanguage for .ts
+getLanguage: extension='.ts', langKey='typescript'
+Query created for .ts
+Found 1 matches for utils/helper.ts
+Capture: name=path, text='./other'
+TreeSitterExtractor: calling getLanguage for .py
+getLanguage: extension='.py', langKey='python'
+Loading grammar from C:\Users\MADHAV\Downloads\alpha\hustlers_alphabyte26\public\tree-sitter-python.wasm
+Query created for .py
+Found 3 matches for script.py
+Capture: name=path, text=os
+Capture: name=path, text=utils
+Capture: name=path, text=tensorflow as tf
+TreeSitterExtractor: calling getLanguage for .go
+getLanguage: extension='.go', langKey='go'
+Loading grammar from C:\Users\MADHAV\Downloads\alpha\hustlers_alphabyte26\public\tree-sitter-go.wasm
+Query created for .go
+Found 3 matches for main.go
+Capture: name=path, text="fmt"
+Capture: name=path, text="net/http"
+Capture: name=path, text="github.com/gin-gonic/gin"
+Graph built successfully!
+{
+  "nodes": [
+    {
+      "id": "main.ts",
+      "name": "main.ts",
+      "type": "file",
+      "imports": [
+        "utils/helper.ts"
+      ],
+      "exports": [
+        "AppComponent"
+      ]
+    },
+    {
+      "id": "utils/helper.ts",
+      "name": "utils/helper.ts",
+      "type": "file",
+      "imports": [],
+      "exports": [
+        "Helper"
+      ]
+    },
+    {
+      "id": "script.py",
+      "name": "script.py",
+      "type": "file",
+      "imports": [],
+      "exports": []
+    },
+    {
+      "id": "main.go",
+      "name": "main.go",
+      "type": "file",
+      "imports": [],
+      "exports": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "main.ts",
+      "target": "utils/helper.ts"
+    }
+  ],
+  "circular": []
+}

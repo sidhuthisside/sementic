@@ -1,0 +1,55 @@
+{
+  "name": "semantic-test",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@google/generative-ai": "^0.24.1",
+    "@monaco-editor/react": "^4.7.0",
+
+    "@react-three/drei": "^9.112.0",
+    "@react-three/fiber": "^8.17.7",
+    "@supabase/supabase-js": "^2.95.3",
+    "canvas-confetti": "^1.9.4",
+    "clsx": "^2.1.1",
+    "diff": "^8.0.3",
+    "framer-motion": "^11.5.4",
+    "html2canvas": "^1.4.1",
+    "jspdf": "^4.0.0",
+    "lucide-react": "^0.441.0",
+    "mermaid": "^11.12.2",
+    "next": "14.2.13",
+    "next-auth": "^4.24.13",
+    "react": "^18",
+    "react-copy-to-clipboard": "^5.1.0",
+    "react-countup": "^6.5.3",
+    "react-dom": "^18",
+    "react-force-graph-3d": "^1.29.0",
+    "recharts": "^3.7.0",
+    "tailwind-merge": "^2.5.2",
+    "three": "^0.169.0",
+    "tree-sitter-wasms": "^0.1.13",
+    "web-tree-sitter": "^0.20.8"
+  },
+  "devDependencies": {
+    "@types/canvas-confetti": "^1.9.0",
+    "@types/diff": "^7.0.2",
+    "@types/node": "^20",
+
+    "@types/react": "^18",
+    "@types/react-copy-to-clipboard": "^5.0.7",
+    "@types/react-dom": "^18",
+    "@types/three": "^0.169.0",
+    "autoprefixer": "^10.4.23",
+    "eslint": "^8",
+    "eslint-config-next": "14.2.13",
+    "postcss": "^8",
+    "tailwindcss": "^3.4.1",
+    "typescript": "^5"
+  }
+}
