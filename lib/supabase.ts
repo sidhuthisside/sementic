@@ -1,5 +1,5 @@
-// DEMO MODE: Supabase is stubbed out for the frontend-only demo deployment.
-// All auth operations return no-op results so the app renders without a real Supabase project.
+// DEMO MODE: Supabase is fully stubbed out for frontend-only deployment.
+// All auth and storage operations return safe no-op results.
 
 export const supabase = {
     auth: {
@@ -12,14 +12,16 @@ export const supabase = {
         signInWithPassword: async () => ({ data: { session: null, user: null }, error: null }),
     },
     from: (_table: string) => ({
-        select: () => ({ data: [], error: null }),
-        insert: () => ({ data: null, error: null }),
-        update: () => ({ data: null, error: null }),
-        delete: () => ({ data: null, error: null }),
+        select: () => Promise.resolve({ data: [], error: null }),
+        insert: () => Promise.resolve({ data: null, error: null }),
+        update: () => Promise.resolve({ data: null, error: null }),
+        delete: () => Promise.resolve({ data: null, error: null }),
+        upsert: () => Promise.resolve({ data: null, error: null }),
     }),
     storage: {
         from: (_bucket: string) => ({
-            upload: async () => ({ data: null, error: null }),
+            upload: async () => ({ data: null, error: new Error('Demo mode — storage disabled') }),
+            download: async () => ({ data: null, error: new Error('Demo mode — storage disabled') }),
             getPublicUrl: () => ({ data: { publicUrl: '' } }),
         }),
     },

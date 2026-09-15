@@ -1,15 +1,14 @@
-// DEMO MODE: Returns mock analysis for local file uploads.
+// DEMO MODE: Local analysis persistence stubbed.
+// GET returns 404 (no saved data) so the page falls through to fresh analysis.
+// POST accepts saves but does nothing.
 import { NextResponse } from 'next/server';
-import { mockData } from '@/lib/mockData';
+
+export async function GET() {
+    // Return 404 so the page skips local persistence and goes straight to fresh mock analysis
+    return NextResponse.json({ error: 'No local data' }, { status: 404 });
+}
 
 export async function POST() {
-    await new Promise(r => setTimeout(r, 600));
-    return NextResponse.json({
-        success: true,
-        metrics: mockData.metrics,
-        graph: mockData.graph,
-        patterns: mockData.patterns,
-        issues: mockData.issues,
-        recommendations: mockData.recommendations,
-    });
+    // Accept the save silently
+    return NextResponse.json({ success: true });
 }
